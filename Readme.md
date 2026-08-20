@@ -17,7 +17,7 @@ The long-term goal is to explore **neuromorphic Edge AI** implementations using 
 ---
 
 ## 🧮 Core Equation
-## 🧮 Core Equation
+
 
 The liquid neuron follows the continuous-time differential equation:
 
