@@ -102,4 +102,80 @@ Two networks are compared: one with short τ and one with longer τ.
 ![Liquid Memory](results/liquid_memory.png)
 
 **Analysis:**
-After input removal, the slower dynamics retain the internal state for longer
+After input removal, the slower dynamics retain the internal state for longer. This illustrates how τ influences temporal memory.
+
+---
+
+### 5. Temporal / Frequency Encoding
+
+![Frequency Encoding](results/frequency_encoding.png)  
+![Oscillator Signal](results/oscillator_signal.png)  
+![State Reconstruction](results/state_reconstruction.png)
+
+**Analysis:**
+- Frequency encoding provides a temporal representation of the liquid state.  
+- The oscillator converts frequency information into a time-domain signal.  
+- Quantization and noise provide a simple model of hardware imperfections.  
+- The reconstruction shows high encoding fidelity.
+
+---
+
+### 6. Liquid State Evolution
+
+![Liquid State](results/liquid_state.png)
+
+**Analysis:**
+The liquid state evolves smoothly over time, reflecting the continuous-time dynamics of the network.
+
+---
+
+### 7. Temporal Prediction — Liquid vs RNN
+
+A multi-frequency signal is predicted one step ahead:
+
+![Prediction Signal](https://latex.codecogs.com/svg.latex?x(t)=\sin(0.7t)+0.5\sin(2.3t)+0.2\sin(4.1t))
+
+![Prediction Comparison](results/prediction_comparison.png)
+
+**Analysis:**
+The Liquid Network is compared with a conventional RNN using the same temporal prediction task.  
+The comparison highlights the difference between conventional discrete recurrent dynamics and adaptive continuous-time liquid dynamics.
+
+---
+
+### 8. Hardware-Inspired Robustness
+
+![Robustness](results/robustness.png)
+
+**Analysis:**
+The experiment evaluates how prediction performance changes under parameter perturbations, providing a simple software-level study of hardware variability.
+
+---
+
+## ✅ Summary
+
+| Aspect               | Liquid Network | RNN Baseline |
+|----------------------|----------------|--------------|
+| Temporal stability   | High           | Moderate     |
+| Adaptive dynamics    | Yes (τ variable) | No         |
+| Memory persistence   | Tunable        | Fixed        |
+| Frequency encoding   | Robust         | Not native   |
+| Noise tolerance      | Strong         | Weak         |
+| Prediction accuracy  | Stable but slightly lower | Higher pointwise accuracy |
+
+---
+
+## 🔮 Conclusion
+
+This project demonstrates how **recurrent liquid dynamics** can provide adaptive temporal behavior, controllable memory, frequency-based representations, and robustness to perturbations.
+
+It provides an **algorithmic foundation** for future work on analog neuromorphic hardware based on **oscillators, time-domain computation, and low-power Edge AI**.
+
+---
+
+## 🚀 How to Run
+
+```bash
+git clone https://github.com/chlakhal/Liquid-neural-networks.git
+cd Liquid-neural-networks
+python main.py
